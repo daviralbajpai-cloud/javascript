@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white">
+
+    <ul class="language">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    
+</body>
+<script>
+function addlanguage(lang){
+    const li = document.createElement('li');
+    li.innerText = lang;
+    document.querySelector('.language').appendChild(li);
+}
+addlanguage('Python');
+
+function addlanguageOptimized(langname){
+    const li= document.createElement('li');
+    li.appendChild(document.createTextNode(langname))
+    document.querySelector('.language').appendChild(li);
+}
+addlanguageOptimized('java');
+
+function removelanguage(lang11){
+    const items = document.querySelectorAll('.language li');
+    items.forEach(item => {
+        if(item.innerText === lang11){
+            item.remove();
+        }
+    });
+}
+removelanguage('CSS');
+
+// edit
+const secondElement = document.querySelector('li:nth-child(2)')
+const newLi = document.createElement('li')
+newLi.textContent= "mojo"
+
+secondElement.replaceWith(newLi)
+
+// edit 
+const firstchild = Document.querySelector("li:first-child");
+firstchild.outerHTML = '<li>hello</li>'
+</script>
+   
+</html>

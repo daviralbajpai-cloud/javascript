@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+    </div>
+    <script>
+
+     const parent = document.querySelector('.parent'); // Select the parent element , used .parent because we have to eccess div with class parent
+    // console.log(parent);
+    // console.log(parent.children); // Access the children of the parent element
+    // console.log(parent.children[0]); // Access the first child element (Monday)
+    // console.log(parent.children[1].innerHTML); // Access the second child element (Tuesday)
+    
+    // for(let i=0; i<parent.children.length; i++){
+    //     console.log(parent.children[i].innerHTML); // Access the inner HTML of each child element
+    // }
+    parent.children[1].style.color = 'red'; // This will not work because children is an HTMLCollection, we need to loop through it to change the style of each child element
+    parent.children[0].style.backgroundColor = 'yellow'; // This will not work because children is an HTMLCollection, we need to loop through it to change the style of each child element
+    parent.children[0].style.color = 'black'; // This will not work because children is an HTMLCollection, we need to loop through it to change the style of each child element
+    
+    console.log(parent.firstElementChild); // Access the first child element (Monday)
+    console.log(parent.lastElementChild); // Access the last child element (Friday)
+    
+    const dayOne = document.querySelector('.day'); // Select the first element with class 'day'
+    // console.log(dayOne); // This will log the first element with class 'day' (Monday)
+    // console.log(dayOne.nextElementSibling); // Access the next sibling element (Tuesday)
+    // console.log(dayOne.nextElementSibling.nextElementSibling); // Access the next sibling element (
+    // console.log(dayOne.previousElementSibling); // Access the previous sibling element (null, because Monday is the first child)
+
+    console.log("Nodes:",parent.childNodes); // Access all child nodes of the parent element (including text nodes)
+
+    
+</script>
+</body>
+
+   </html>
